@@ -9,8 +9,19 @@ Basado en /spec y /spec-impl
 Siguiendo las buenas practicas recomendadas aquí:
 <https://github.com/Klerith/fernando-skills>
 
+## Skills
+
+Usa siempre /frontend-design para el diseño de componentes ofreciendo una buena experiencia de usuario
+
 ## Skills usadas
 
 ```bash
 npx skills@latest add Klerith/fernando-skills
 ```
+
+## Commands
+
+- `npm run dev` — dev server
+- `npm run build` / `npm start` — production build / serve
+- `npm run lint` — ESLint (flat config, `eslint.config.mjs`)
+- No test runner configured.
