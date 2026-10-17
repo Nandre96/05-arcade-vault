@@ -1,12 +1,11 @@
-import { cookies } from "next/headers";
 import {
   DEFAULT_PLAYER_NAME,
   MAX_NAME_LENGTH,
   SESSION_COOKIE,
 } from "@/app/const/session.const";
+import { cookies } from "next/headers";
 import type { Session } from "./types";
 
-// Fake session stored in an httpOnly cookie. Eventually this is a real auth provider.
 export async function getSession(): Promise<Session | null> {
   const store = await cookies();
   const raw = store.get(SESSION_COOKIE)?.value;
@@ -19,7 +18,6 @@ export async function getSession(): Promise<Session | null> {
   }
 }
 
-// Only callable from Server Actions / Route Handlers.
 export async function setSession(name: string): Promise<Session> {
   const session: Session = {
     name: (name.trim() || DEFAULT_PLAYER_NAME).toUpperCase().slice(0, MAX_NAME_LENGTH),
@@ -33,7 +31,6 @@ export async function setSession(name: string): Promise<Session> {
   return session;
 }
 
-// Only callable from Server Actions / Route Handlers.
 export async function clearSession(): Promise<void> {
   const store = await cookies();
   store.delete(SESSION_COOKIE);
