@@ -10,8 +10,10 @@ export default function Nav({ session }: NavProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  const isLibrary = pathname === "/" || pathname.startsWith("/games");
+  const isHome = pathname === "/";
+  const isLibrary = pathname.startsWith("/games");
   const isHall = pathname.startsWith("/hall-of-fame");
+  const isAbout = pathname.startsWith("/about");
   const isAuth = pathname.startsWith("/auth");
   const active = (on: boolean) => (on ? "active" : undefined);
 
@@ -25,8 +27,10 @@ export default function Nav({ session }: NavProps) {
           </div>
         </Link>
         <div className="links">
-          <Link href="/" className={active(isLibrary)}>Biblioteca</Link>
+          <Link href="/" className={active(isHome)}>Inicio</Link>
+          <Link href="/games" className={active(isLibrary)}>Biblioteca</Link>
           <Link href="/hall-of-fame" className={active(isHall)}>Salón de la Fama</Link>
+          <Link href="/about" className={active(isAbout)}>Acerca de</Link>
         </div>
         <div className="spacer"></div>
         <div className="coin-counter">
@@ -58,8 +62,10 @@ export default function Nav({ session }: NavProps) {
       ></div>
       <aside className={"av-mobile-panel" + (open ? " open" : "")}>
         <div className="pixel neon-cyan mb-4 text-[11px]">MENÚ</div>
-        <Link href="/" className={active(isLibrary)} onClick={() => setOpen(false)}>Biblioteca</Link>
+        <Link href="/" className={active(isHome)} onClick={() => setOpen(false)}>Inicio</Link>
+        <Link href="/games" className={active(isLibrary)} onClick={() => setOpen(false)}>Biblioteca</Link>
         <Link href="/hall-of-fame" className={active(isHall)} onClick={() => setOpen(false)}>Salón de la Fama</Link>
+        <Link href="/about" className={active(isAbout)} onClick={() => setOpen(false)}>Acerca de</Link>
         <Link href="/auth" className={active(isAuth)} onClick={() => setOpen(false)}>
           {session ? "Cuenta" : "Iniciar Sesión"}
         </Link>
