@@ -2,13 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import type { Game, ScoreRow, Session } from "@/app/data/types";
-
-interface HallOfFameProps {
-  games: Game[];
-  scores: Record<string, ScoreRow[]>;
-  session: Session | null;
-}
+import type { HallOfFameProps } from "@/app/interfaces/components.interface";
 
 const rankClass = (i: number) => (i === 0 ? " top1" : i === 1 ? " top2" : i === 2 ? " top3" : "");
 const fmt = (n: number) => n.toLocaleString("es-ES");

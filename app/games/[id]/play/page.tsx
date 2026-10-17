@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import GamePlayer from "@/app/components/GamePlayer";
 import { getGame } from "@/app/data/games";
 import { getSession } from "@/app/data/session";
+import type { PlayRouteProps } from "@/app/interfaces/pages.interface";
 
 export default function PlayPage({ params }: PageProps<"/games/[id]/play">) {
   return (
@@ -12,7 +13,7 @@ export default function PlayPage({ params }: PageProps<"/games/[id]/play">) {
   );
 }
 
-async function Player({ params }: { params: PageProps<"/games/[id]/play">["params"] }) {
+async function Player({ params }: PlayRouteProps) {
   const { id } = await params;
   const game = await getGame(id);
   if (!game) notFound();

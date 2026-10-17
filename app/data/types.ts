@@ -1,5 +1,4 @@
-export type Category = "ARCADE" | "PUZZLE" | "SHOOTER" | "VERSUS";
-export type NeonColor = "cyan" | "magenta" | "green" | "yellow";
+import type { Category, NeonColor } from "@/app/enum/game.enum";
 
 export interface Game {
   id: string; // "bloque-buster"

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRef } from "react";
 import type { Game } from "@/app/data/types";
+import type { GameCardProps } from "@/app/interfaces/components.interface";
 
 const BTN_COLOR: Record<Game["color"], string> = {
   cyan: "",
@@ -11,7 +12,7 @@ const BTN_COLOR: Record<Game["color"], string> = {
   yellow: " yellow",
 };
 
-export default function GameCard({ game }: { game: Game }) {
+export default function GameCard({ game }: GameCardProps) {
   const ref = useRef<HTMLAnchorElement>(null);
 
   const onMove = (e: React.MouseEvent) => {

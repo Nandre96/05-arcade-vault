@@ -4,12 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { DEFAULT_GUEST_NAME, MAX_NAME_LENGTH } from "@/app/const/session.const";
 import { saveScoreAction } from "@/app/games/[id]/play/actions";
-import type { Game } from "@/app/data/types";
-
-interface GamePlayerProps {
-  game: Game;
-  userName: string | null;
-}
+import type { GamePlayerProps } from "@/app/interfaces/components.interface";
 
 export default function GamePlayer({ game, userName }: GamePlayerProps) {
   const [score, setScore] = useState(0);

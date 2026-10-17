@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getGame } from "@/app/data/games";
 import { getScores } from "@/app/data/scores";
+import type { GameRouteProps } from "@/app/interfaces/pages.interface";
 
 export default function GameDetailPage({ params }: PageProps<"/games/[id]">) {
   return (
@@ -12,7 +13,7 @@ export default function GameDetailPage({ params }: PageProps<"/games/[id]">) {
   );
 }
 
-async function GameDetail({ params }: { params: PageProps<"/games/[id]">["params"] }) {
+async function GameDetail({ params }: GameRouteProps) {
   const { id } = await params;
   const game = await getGame(id);
   if (!game) notFound();

@@ -2,10 +2,10 @@
 
 import { useMemo, useState } from "react";
 import { ALL_CATEGORIES, CATS } from "@/app/const/games.const";
-import type { Game } from "@/app/data/types";
+import type { LibraryProps } from "@/app/interfaces/components.interface";
 import GameCard from "./GameCard";
 
-export default function Library({ games }: { games: Game[] }) {
+export default function Library({ games }: LibraryProps) {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<string>(ALL_CATEGORIES);
 

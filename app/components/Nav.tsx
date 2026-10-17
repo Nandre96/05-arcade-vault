@@ -4,11 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { signOut } from "@/app/auth/actions";
-import type { Session } from "@/app/data/types";
-
-interface NavProps {
-  session: Session | null;
-}
+import type { NavProps } from "@/app/interfaces/components.interface";
 
 export default function Nav({ session }: NavProps) {
   const [open, setOpen] = useState(false);
