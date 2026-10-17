@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { signOut } from "@/app/auth/actions";
 import type { Session } from "@/app/data/types";
 
 interface NavProps {
@@ -37,7 +38,11 @@ export default function Nav({ session }: NavProps) {
           <span>CRÉDITOS · 03</span>
         </div>
         {session ? (
-          <button type="button" className="btn ghost auth-btn">{session.name} ▾</button>
+          <form action={signOut} className="auth-btn">
+            <button type="submit" className="btn ghost" title="Cerrar sesión">
+              {session.name} ▾
+            </button>
+          </form>
         ) : (
           <Link href="/auth" className="btn auth-btn">Iniciar Sesión</Link>
         )}
