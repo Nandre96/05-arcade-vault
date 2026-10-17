@@ -16,3 +16,15 @@ export const CONTACT_TIPS: ContactTip[] = [
   { text: "SUGERENCIAS BIENVENIDAS", color: NeonColor.Yellow },
   { text: "SIN SPAM, JAMÁS", color: NeonColor.Magenta },
 ];
+
+export const ABOUT_TITLE = "ACERCA DE ARCADE VAULT";
+export const DIVIDER_PIXELS = 24;
+export const DIVIDER_STEP_MS = 80;
+export const HIGHLIGHT_STEP_MS = 80;
+
+export const TIP_LED_CLASS: Record<NeonColor, string> = {
+  [NeonColor.Green]: "",
+  [NeonColor.Yellow]: "y",
+  [NeonColor.Magenta]: "m",
+  [NeonColor.Cyan]: "",
+};

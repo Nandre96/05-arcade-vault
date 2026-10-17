@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { NeonColor } from "@/app/enum/game.enum";
 import type { FeatureIcon } from "@/app/enum/home.enum";
+import type { HighlightIcon } from "@/app/enum/about.enum";
 import type { ActivityEntry, Game, ScoreRow, Session, TopPlayer } from "@/app/data/types";
 
 export interface GameCardProps {
@@ -60,4 +61,8 @@ export interface GamesPreviewProps {
 export interface ActivitySectionProps {
   activity: ActivityEntry[];
   top: TopPlayer[];
+}
+
+export interface HighlightGlyphProps {
+  kind: HighlightIcon;
 }
