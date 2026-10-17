@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Courier_Prime, JetBrains_Mono, Press_Start_2P } from "next/font/google";
+import { Suspense } from "react";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import NavSession from "./components/NavSession";
 import "./globals.css";
 
 const pressStart = Press_Start_2P({
@@ -28,13 +32,21 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${pressStart.variable} ${jetbrainsMono.variable} ${courierPrime.variable}`}
     >
       <body>
         <div className="av-bg" aria-hidden />
         <div className="av-noise" aria-hidden />
-        {children}
+        <div className="av-root">
+          <Suspense>
+            <Suspense fallback={<Nav session={null} />}>
+              <NavSession />
+            </Suspense>
+          </Suspense>
+          <main className="av-main">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

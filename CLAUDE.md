@@ -14,3 +14,9 @@ Arcade Vault: online games platform where players compete for highest score. Dev
 - **Next.js has breaking changes vs. training data** (see `AGENTS.md`): read relevant guide in `node_modules/next/dist/docs/` before writing Next code.
 - Layouts use globally-available typed helpers, e.g. `LayoutProps<"/">` (no import needed).
 - `references/` dir exists for spec/reference material.
+
+## Code conventions
+
+- Interfaces/types NEVER inline in components or pages. Put them in dedicated files: component props in `app/interfaces/components.interface.ts`, route props in `app/interfaces/pages.interface.ts`, domain data types in `app/data/types.ts`.
+- Repeated string literal unions (categories, colors, etc.) go in `enum`s under `app/enum/*.enum.ts` (e.g. `Category`, `NeonColor` in `game.enum.ts`). Use the enum member everywhere; never repeat raw literals.
+- Static data/constants live in `app/const/*.const.ts`.
