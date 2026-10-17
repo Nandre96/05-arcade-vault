@@ -970,3 +970,22 @@ body { min-height: 100%; }
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }
 @keyframes spinpix { to { transform: rotate(360deg); } }
+
+/* ===== 404 ===== */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 70vh;
+  padding: 48px 24px;
+  text-align: center;
+}
+.nf-code { font-size: clamp(72px, 22vw, 200px); line-height: 1; letter-spacing: 0.08em; }
+.nf-title { font-size: clamp(12px, 2.6vw, 20px); line-height: 1.6; }
+.nf-sub { color: var(--ink-dim); max-width: 420px; }
+.nf-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 8px; }
+@media (max-width: 768px) {
+  .nf-ctas .btn { width: 100%; padding: 16px 20px; font-size: 11px; }
+}
