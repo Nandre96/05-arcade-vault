@@ -172,6 +172,7 @@ body { min-height: 100%; }
   font-family: var(--pixel);
   font-size: 9px;
   letter-spacing: 0.16em;
+  white-space: nowrap;
   color: var(--ink-dim);
   cursor: pointer;
   transition: color 120ms;
@@ -197,6 +198,9 @@ body { min-height: 100%; }
   .av-nav .links { display: none; }
   .av-nav .coin-counter { display: none; }
   .av-nav .hamburger { display: inline-flex; }
+  .av-nav { gap: 10px; }
+  .av-nav .logo-text { font-size: 10px; }
+  .av-nav .btn { padding: 10px 12px; font-size: 9px; letter-spacing: 0.1em; white-space: nowrap; }
 }
 
 .av-mobile-panel {
@@ -999,7 +1003,7 @@ body { min-height: 100%; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 32px 60px;
+  padding: 80px 32px 110px;
   overflow: hidden;
 }
 .home-hero-inner { position: relative; z-index: 3; text-align: center; max-width: 1100px; }
