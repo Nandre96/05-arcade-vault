@@ -1,4 +1,5 @@
 import type { Category, NeonColor } from "@/app/enum/game.enum";
+import type { FeatureIcon } from "@/app/enum/home.enum";
 
 export interface Game {
   id: string; // "bloque-buster"
@@ -28,4 +29,46 @@ export interface SavedScore {
 
 export interface Session {
   name: string; // máx 10 chars, mayúsculas; vacío → "PLAYER1"
+}
+
+export interface ActivityEntry {
+  player: string; // "NEONFOX"
+  game: string; // "Caída" (título corto del juego)
+  score: number; // 184220
+  ago: string; // "hace 2 min"
+  color: NeonColor;
+}
+
+export interface TopPlayer {
+  rank: number; // 1..5
+  player: string;
+  score: number;
+}
+
+export interface Feature {
+  icon: FeatureIcon;
+  title: string;
+  description: string;
+  color: NeonColor;
+}
+
+export interface HomeStat {
+  value: string;
+  unit: string;
+  sub: string;
+}
+
+export interface Pricing {
+  label: string;
+  name: string;
+  amount: string;
+  unit: string;
+  tag: string;
+  perks: string[];
+  foot: string;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
 }
