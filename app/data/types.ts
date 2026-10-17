@@ -1,5 +1,6 @@
 import type { Category, NeonColor } from "@/app/enum/game.enum";
 import type { FeatureIcon } from "@/app/enum/home.enum";
+import type { ContactField, ContactStatus, HighlightIcon } from "@/app/enum/about.enum";
 
 export interface Game {
   id: string; // "bloque-buster"
@@ -71,4 +72,29 @@ export interface Pricing {
 export interface FaqItem {
   question: string;
   answer: string;
+}
+
+export interface Highlight {
+  icon: HighlightIcon;
+  text: string;
+  color: NeonColor;
+}
+
+export interface ContactTip {
+  text: string;
+  color: NeonColor;
+}
+
+export interface ContactFormState {
+  status: ContactStatus;
+  name?: string; // nombre para el terminal de éxito
+  fieldErrors?: Partial<Record<ContactField, string>>;
+  formError?: string; // fallo de envío
+  values?: Partial<Record<ContactField, string>>; // para no perder lo escrito
+}
+
+export interface ContactPayload {
+  name: string;
+  email: string;
+  message: string;
 }
